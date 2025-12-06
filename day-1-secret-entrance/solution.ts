@@ -14,6 +14,10 @@ rotations.forEach((rotation) => {
   }
 
   while (currentRotation < 0) {
+    if (currentRotation + amount !== 0) {
+      password++;
+    }
+
     currentRotation = maxRotation - currentRotation * -1;
   }
 
@@ -23,6 +27,10 @@ rotations.forEach((rotation) => {
 
   while (currentRotation > maxRotation - 1) {
     currentRotation = minRotation + (currentRotation - maxRotation);
+
+    if (currentRotation !== 0) {
+      password++;
+    }
   }
 
   if (currentRotation === 0) {
